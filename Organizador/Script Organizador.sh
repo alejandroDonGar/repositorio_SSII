@@ -13,10 +13,23 @@ mkdir vacios && echo "Se ha creado la carpeta vacios."
 echo
 for archivos in "Organizador"/*; 
 do
-if [[ -f $archivos "*.txt","*.doc","*.pdf"]]; then
-    echo "Se han movido los documentos a la carpeta "Documentos" correctamente."
-    mv documentos/
-fi
+    if [[ -f $archivos -n "*.txt", "*.doc", "*.pdf" ]]; then
+        mv documentos/
+        echo "Se han movido los documentos a la carpeta "documentos" correctamente."
+    fi
+    if [[ -f $archivos -n "*.jpg", "*.gif", "*.bpm" ]]; then
+        mv imagenes/
+        echo "Se han movido los imagenes a la carpeta "imagenes" correctamente."
+    fi
+    if [[ -f $archivos -n "*.jpg", "*.gif", "*.bpm" ]]; then
+        mv ejecutables/
+        echo "Se han movido los archivos ".java" a la carpeta "ejecutables" correctamente."
+    fi
+    if [[ -f $archivos -s 0 ]]; then
+        mv vacios/
+        echo "Se han movido los archivos vacios a la carpeta "vacios" correctamente."
+    fi
 done
 echo
 echo "Proceso finalizado"
+echo
