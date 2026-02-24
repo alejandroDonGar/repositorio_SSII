@@ -11,10 +11,12 @@ mkdir ejecutables && echo "Se ha creado la carpeta ejecutables."
 mkdir documentos && echo "Se ha creado la carpeta documentos."
 mkdir vacios && echo "Se ha creado la carpeta vacios."
 echo
+contador=0
 for archivos in Organizador/; 
 do
     if [[ -e "$archivos" ]] && [[ ! -s "$archivos" ]]; then
         mv "$archivos" vacios/
+        ((contador++))
     fi
 done
 echo
@@ -24,6 +26,7 @@ for archivos in *.{txt,doc,pdf,odt};
 do
     if [[ -e "$archivos" ]]; then
         mv "$archivos" documentos/
+        ((contador++))
     fi
 done
 echo
@@ -33,6 +36,7 @@ for archivos in *.{jpg,gif,bmp,png};
 do
     if [[ -e "$archivos" ]]; then
         mv "$archivos" imagenes/
+        ((contador++))
     fi
 done
 echo
@@ -42,6 +46,7 @@ for archivos in *.java;
 do
     if [[ -e "$archivos" ]]; then
         mv "$archivos" ejecutables/
+        ((contador++))
     fi
 done
 echo
