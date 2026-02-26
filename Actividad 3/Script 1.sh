@@ -5,10 +5,22 @@
 #Author         :AlejandroDoGa
 ############################################
 set -euo pipefail
-echo "------------------------------------------"
-echo "Vamos a calcular el número de segundos que hay en una fecha compuesta con forma -> DIA, HORAS y MINUTOS."
-echo "Dime los números que escojas en ese orden: $1 $2 $3"
-echo "------------------------------------------"
-dia = $1
-horas = $2
-segundos = $3
+
+echo "------------------------------------------------------------"
+echo "Dime una fecha con formato DÍA, HORA Y SEGUNDOS"
+echo "y te diré los segundos totales."
+echo "------------------------------------------------------------"
+
+read -p "Introduce los días: " DIAS
+read -p "Introduce las horas: " HORAS
+read -p "Introduce los segundos: " SEGUNDOS_EXTRAS
+
+SEG_DIAS=$((DIAS * 86400))
+SEG_HORAS=$((HORAS * 3600))
+
+TOTAL=$((SEG_DIAS + SEG_HORAS + SEGUNDOS_EXTRAS))
+
+echo "------------------------------------------------------------"
+echo "El resultado de calcular $DIAS días, $HORAS horas y $SEGUNDOS_EXTRAS segundos es:"
+echo "¡Un total de $TOTAL segundos!"
+echo "------------------------------------------------------------"
