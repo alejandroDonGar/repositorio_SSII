@@ -14,6 +14,9 @@ echo "------------------------------------------------------------"
 read -p "Introduce los días: " DIAS
 read -p "Introduce las horas: " HORAS
 read -p "Introduce los segundos: " SEGUNDOS_EXTRAS
+sleep 1
+echo "Calculando..."
+sleep 3
 
 SEG_DIAS=$((DIAS * 86400))
 SEG_HORAS=$((HORAS * 3600))
