@@ -20,7 +20,7 @@ read -p "Ahora, confirma tu contraseña: " CONTRASENIA2
 echo "..."
 sleep 1
 
-if [ "$CONTRASENIA1"=="$CONTRASENIA2" ]; then
+if [[ "$CONTRASENIA1"=="$CONTRASENIA2" ]]; then
     echo "------------------------------------------------"
     echo "¡Muy bien! Las contraseñas coinciden."
     echo "Ha terminado el proceso."
@@ -33,6 +33,6 @@ else
     echo "------------------------------------------------"
     echo
     echo "Reintentando..."
-    sleep 
+    sleep 2
     fi
 done
