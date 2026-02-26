@@ -12,17 +12,17 @@ echo "Empezando..."
 sleep 1
 while true;
 do
-read -p "Primero, introduce tu contraseña: " CONTRASEÑA1
+read -p "Primero, introduce tu contraseña: " CONTRASENIA1
 echo "..."
 sleep 1
 
-read -p "Ahora, confirma tu contraseña: " CONTRASEÑA2
+read -p "Ahora, confirma tu contraseña: " CONTRASENIA2
 echo "..."
 sleep 1
 
-if [ "$CONTRASEÑA1"=="$CONTRASEÑA2" ]; then
+if [ "$CONTRASENIA1"=="$CONTRASENIA2" ]; then
     echo "------------------------------------------------"
-    echo "¡Muy bien! Las contraseñas coinciden."ç
+    echo "¡Muy bien! Las contraseñas coinciden."
     echo "Ha terminado el proceso."
     echo "------------------------------------------------"
     break
